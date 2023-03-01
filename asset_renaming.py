@@ -1,11 +1,13 @@
 import unreal
 
+
 def rename_assets(search_pattern, replace_pattern, use_case):
     # unreal classes instances
 
     system_lib = unreal.SystemLibrary()
     edit_util = unreal.EditorUtilityLibrary()
     string_lib = unreal.StringLibrary()
+
 
     # get the selected assets and number for displaying
 
@@ -33,5 +35,6 @@ def rename_assets(search_pattern, replace_pattern, use_case):
             unreal.log("{} did not match the search pattern, was skipped".format(asset_name))
 
     unreal.log('replaced {} of {} assets'.format(replaced, num_assets))
+
 
 rename_assets('New', 'Old', True)
