@@ -3,14 +3,22 @@ import sys
 
 
 def rename_assets(search_pattern, replace_pattern, use_case):
-    # unreal classes instances
+    """
+    This function takes in a search pattern, replace pattern and a flag for case-sensitive search.
+    It searches for selected assets with names containing the search pattern and replaces them with the replace pattern.
+    If use_case is True, search will be case-sensitive, else it will be case-insensitive
+    :param search_pattern:
+    :param replace_pattern:
+    :param use_case:
+    :return:
+    """
 
+    # unreal classes instances
     system_lib = unreal.SystemLibrary()
     edit_util = unreal.EditorUtilityLibrary()
     string_lib = unreal.StringLibrary()
 
     # get the selected assets and number for displaying
-
     selected_assets = edit_util.get_selected_assets()
     num_assets = len(selected_assets)
     replaced = 0
@@ -18,7 +26,6 @@ def rename_assets(search_pattern, replace_pattern, use_case):
     unreal.log("Selected {} assets".format(num_assets))
 
     # this loops over each asset and renames it
-
     for asset in selected_assets:
         asset_name = system_lib.get_object_name(asset)
 
