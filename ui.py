@@ -75,6 +75,7 @@ class MainWindow(QMainWindow):
         case_sens = self.case_check.isChecked()
 
         rename_assets(replace_text, with_text, case_sens)
+        QApplication.quit()
 
 
 if __name__ == '__main__':

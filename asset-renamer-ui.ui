@@ -34,7 +34,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Asset Renamer</string>
+        <string>Unreal Engine Asset Renamer</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
